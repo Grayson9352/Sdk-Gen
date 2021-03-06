@@ -1,13 +1,12 @@
 const fs = require("fs")
-var sdk = ""
+var sdk = "#pragma once\n\n//Fortnite SDk Gen Made By Jacobb626\n#include <set>\n#include <locale>\n#include <string>\n\n"
 
 console.log("Sdk Gen made by Jacobb626")
-console.log("Making Sdk Functions")
 
 fs.readdirSync(`${__dirname}/SDK`).forEach(fct => {
-    sdk = sdk + `#include "${fct}"\n`
+    sdk = sdk + `#include "SDK/${fct}"\n`
 })
 
-fs.writeFileSync(`${__dirname}/SdkFunctions.txt`, sdk)
+fs.writeFileSync(`${__dirname}/SDK.hpp`, sdk)
 
 console.log("Done!")
